@@ -34,20 +34,30 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         if (Build.VERSION.SDK_INT == Build.VERSION_CODES.M) {
-            Intent intent = new Intent(ACTION_BROWSE_DOCUMENT_ROOT);
-            intent.setData(DocumentsContract.buildRootUri(DOCUMENT_AUTHORITY, DOCUMENT_ROOT_PRIMARY_EMULATED));
-            intent.setComponent(new ComponentName(PACKAGE_NAME, CLASS_NAME_DOCUMENTS_ACTIVITY));
-            intent.addCategory(Intent.CATEGORY_DEFAULT);
-            startActivity(intent);
+            try {
+                Intent intent = new Intent(ACTION_BROWSE_DOCUMENT_ROOT);
+                intent.setData(DocumentsContract.buildRootUri(DOCUMENT_AUTHORITY, DOCUMENT_ROOT_PRIMARY_EMULATED));
+                intent.setComponent(new ComponentName(PACKAGE_NAME, CLASS_NAME_DOCUMENTS_ACTIVITY));
+                intent.addCategory(Intent.CATEGORY_DEFAULT);
+                startActivity(intent);
+            } catch (Exception e) {
+                e.printStackTrace();
+                Toast.makeText(this, R.string.open_file_explorer_failed, Toast.LENGTH_LONG).show();
+            }
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            Intent intent = new Intent(ACTION_BROWSE);
-            intent.setData(DocumentsContract.buildRootUri(DOCUMENT_AUTHORITY, DOCUMENT_ROOT_PRIMARY_EMULATED));
-            intent.setComponent(new ComponentName(PACKAGE_NAME, CLASS_NAME_FILES_ACTIVITY));
-            intent.putExtra(EXTRA_SHOW_ADVANCED, true);
-            intent.putExtra(EXTRA_FANCY_FEATURES, true);
-            intent.putExtra(EXTRA_SHOW_FILESIZE, true);
-            intent.addCategory(Intent.CATEGORY_DEFAULT);
-            startActivity(intent);
+            try {
+                Intent intent = new Intent(ACTION_BROWSE);
+                intent.setData(DocumentsContract.buildRootUri(DOCUMENT_AUTHORITY, DOCUMENT_ROOT_PRIMARY_EMULATED));
+                intent.setComponent(new ComponentName(PACKAGE_NAME, CLASS_NAME_FILES_ACTIVITY));
+                intent.putExtra(EXTRA_SHOW_ADVANCED, true);
+                intent.putExtra(EXTRA_FANCY_FEATURES, true);
+                intent.putExtra(EXTRA_SHOW_FILESIZE, true);
+                intent.addCategory(Intent.CATEGORY_DEFAULT);
+                startActivity(intent);
+            } catch (Exception e) {
+                e.printStackTrace();
+                Toast.makeText(this, R.string.open_file_explorer_failed, Toast.LENGTH_LONG).show();
+            }
         } else {
             Toast.makeText(this, R.string.unsupported_android_version, Toast.LENGTH_LONG).show();
         }

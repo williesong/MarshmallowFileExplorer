@@ -1,4 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">"Marshmallow File Explorer"</string>
     <string name="unsupported_android_version">"Unsupported android version"</string>
+    <string name="open_file_explorer_failed">"Oops, something went wrong. Can't open File Explorer."</string>
 </resources>

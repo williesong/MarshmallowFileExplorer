@@ -1,4 +1,4 @@
-# MarshmallowFileExplorer
+# FileExplorer (Marshmallow & Nougat)
 
-Android 6.0(Marshmallow) has a built-in file explorer. But it can only be opened from Settings -> Storage & USB -> Explore.
-This App is a shortcut to start it.
+Android 6 (Marshmallow) and 7 (Nougat) has a simple built-in file explorer. But it can only be found from "Settings" -> "Storage & USB" -> "Explore". Even some devices hide this feature.
+This app is a shortcut to open it.

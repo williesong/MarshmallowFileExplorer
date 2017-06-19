@@ -1,6 +1,6 @@
-# File Explorer (Marshmallow & Nougat)
+# File Explorer (Marshmallow and above)
 
-Android Marshmallow and Nougat has a simple built-in file explorer. But it can only be found from "Settings" -> "Storage & USB" -> "Explore". And some devices hide this feature.  
+Android Marshmallow and above has a simple built-in file explorer. But it can only be found from "Settings" -> "Storage" -> "Explore".
 This app is a shortcut to open it.
 
 <img src="screenshots/screenshot_1.png" width="30%"/>
